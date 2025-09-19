@@ -18,15 +18,20 @@ Email: yogeswaran00794@gmail.com
 
 ## Bugs Fixed
 
-| Issue                                                         | Fix |
-|------------------------------------|
-| Missing or invalid OpenAI API key  |                Added mock responses fallback so the app never crashes (`USE_MOCK`) |
-| PDF extraction errors              |                Checked for empty PDFs and non-existent files using PyPDF2 and PyPDFLoader |
-| Non-PDF file uploads               |                Added HTTPException validation in `/analyze` endpoint |
-| Large prompts causing AI errors    |                Trimmed input text to 4000 characters for AI calls; stored preview in DB|
-| Unhandled exceptions in AI calls   |                Wrapped OpenAI API calls with try/except and fallback mock responses |
-| Async / task management            |                CrewAI tasks set up in `task.py` for modular AI processing |
-| Database integrity                 |                SQLite tables auto-created and input safely committed;no crashes if database exists |
+| Issue |                         -                             | Fix |
+1.Missing or invalid OpenAI API key - Added mock responses fallback so the app never crashes (`USE_MOCK`) 
+
+2.PDF extraction errors - Checked for empty PDFs and non-existent files using PyPDF2 and PyPDFLoader 
+
+3.Non-PDF file uploads - Added HTTPException validation in `/analyze` endpoint 
+
+4.Large prompts causing AI errors - Trimmed input text to 4000 characters for AI calls; stored 1000 characters preview in DB
+
+5.Unhandled exceptions in AI calls - Wrapped OpenAI API calls with try/except and fallback mock responses 
+
+6.Async / task management - CrewAI tasks set up in `task.py` for modular AI processing
+
+7.Database integrity  - SQLite tables auto-created and input safely committed;no crashes if database exists
 
 
 📂 Project Structure
@@ -117,8 +122,8 @@ Missing OpenAI key → Mock response returned automatically.
 data/sample.pdf – placeholder financial report. Replace with any real financial document for testing.
 
 ⚡Key Features
-AI agents for financial analysis, verification, investment advice, and risk assessment.
-Plain text and PDF document support.
-SQLite database stores queries, previews, and AI results.
-Mock fallback ensures smooth testing without OpenAI key.
-Safe PDF extraction and error handling.
+1.AI agents for financial analysis, verification, investment advice, and risk assessment.
+2.Plain text and PDF document support.
+3.SQLite database stores queries, previews, and AI results.
+4.Mock fallback ensures smooth testing without OpenAI key.
+5.Safe PDF extraction and error handling.
